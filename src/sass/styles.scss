@@ -1,0 +1,31 @@
+@import 'open-props/style';
+@import 'open-props/normalize';
+
+body {
+  display: grid;
+  grid-template-rows: min-content;
+}
+
+main {
+  margin: auto;
+}
+
+main:focus-visible > h1::after {
+  content: '!';
+  color: var(--brand);
+}
+
+main > h1 {
+  line-height: 1;
+}
+.skip-to-content {
+  --indent: 0.5em;
+  transform: translateY(-100%);
+  max-inline-size: max-content;
+
+  &:focus-visible {
+    transform: translateY(0);
+    margin-inline-start: var(--indent);
+    margin-block-start: var(--indent);
+  }
+}
